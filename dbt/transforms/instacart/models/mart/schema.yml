@@ -1,0 +1,85 @@
+version: 2
+
+models:
+  - name: grp3_instacart_fact_orders
+    columns:
+      - name: order_id
+        tests: [not_null, unique]
+      - name: user_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('grp3_instacart_dim_users')
+              field: user_id
+      - name: time_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('grp3_instacart_dim_time')
+              field: time_id
+
+  - name: grp3_instacart_fact_order_products
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('grp3_instacart_fact_orders')
+              field: order_id
+      - name: product_id
+        tests:
+          - [not_null, unique]
+          - relationships:
+              to: ref('grp3_instacart_dim_products')
+              field: product_id
+
+
+  - name: grp3_instacart_dim_users
+    columns:
+      - name: user_id
+        tests: [not_null, unique]
+      - name: customer_segment
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['High Frequency', 'Medium Frequency', 'Regular']
+        name: loyalty_tier
+        tests:
+          - accepted_values:
+              values: ['Very Loyal', 'Loyal', 'Moderate']
+
+  - name: grp3_instacart_dim_products
+    columns:
+      - name: product_id
+        tests: [not_null, unique]
+      - name: aisle_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('grp3_instacart_dim_aisles')
+              field: aisle_id
+      - name: department_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('grp3_instacart_dim_departments')
+              field: department_id
+
+  - name: grp3_instacart_dim_aisles
+    columns:
+      - name: aisle_id
+        tests: [not_null, unique]
+
+  - name: grp3_instacart_dim_departments
+    columns:
+      - name: department_id
+        tests: [not_null, unique]
+
+  - name: grp3_instacart_dim_time
+    columns:
+      - name: time_id
+        tests: [not_null, unique]
+      - name: order_hour_of_day
+        tests: [not_null]
+      - name: order_dow
+        tests: [not_null]
