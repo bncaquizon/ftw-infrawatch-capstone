@@ -3,11 +3,11 @@ import dlt, pandas as pd
 import os
 
 # https://archive.ics.uci.edu/dataset/9/auto+mpg
-@dlt.resource(name="capstone")
-def mpg():
+# @dlt.resource(name="capstone")
+# def mpg():
    
     
-    yield pd.read_csv("").astype(str)
+#     yield pd.read_csv("").astype(str)
     
     # How to load a local CSV
     # Place file in staging\auto-mpg folder
@@ -20,6 +20,14 @@ def mpg():
     #FILE_PATH = os.path.join(STAGING_DIR, "mpg.xlsx")
     #yield pd.read_excel(FILE_PATH).astype(str)
 
+# --- GRDP resource ---
+@dlt.resource(write_disposition="append", name="grdp")
+def grdp():
+    ROOT_DIR = os.path.dirname(__file__)
+    STAGING_DIR = os.path.join(ROOT_DIR, "staging", "capstone")
+    FILE_PATH = os.path.join(STAGING_DIR, "grdp.csv")
+    yield pd.read_csv(FILE_PATH).astype(str)
+
 def run():
     p = dlt.pipeline(
         pipeline_name="capstone-pipeline",
@@ -27,7 +35,7 @@ def run():
         dataset_name="capstone",
     )
     print("Fetching and loading...")
-    info1 = p.run(mpg())          # dlt pulls creds from env-vars
+    info1 = p.run(grdp())          # dlt pulls creds from env-vars
 
     print("records loaded:", info1)
 

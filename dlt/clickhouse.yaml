@@ -1,6 +1,6 @@
 adapter: clickhouse_connect
 port:    8123
-user:    ftw_user
-password: ftw_pass
-database: raw          # target DB
+user: ftw_grp3            # same creds you already use
+password: Squirtle#007_FTW
+database: raw_grp3          # target DB
 
