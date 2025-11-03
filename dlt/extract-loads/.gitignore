@@ -1,0 +1,33 @@
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+*.log
+
+# --- Virtual environment ---
+.venv/
+env/
+venv/
+
+# --- DLT / Temporary Data ---
+.dlt/
+staging/
+data/
+tmp/
+.cache/
+.cache_dlt/
+*.parquet
+*.csv
+*.xlsx
+
+# --- OS / IDE junk ---
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
