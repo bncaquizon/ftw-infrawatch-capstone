@@ -38,17 +38,15 @@ services:
   clickhouse:
     image: clickhouse/clickhouse-server:23.12
     restart: unless-stopped
-    # platform: linux/amd64    # ← uncomment on Apple Silicon ONLY if you hit arch errors
     container_name: clickhouse
     ports:
-      # LOCAL: exposes to your laptop
-      # SERVER: keep as-is; students will reach the server's public IP on 8123/9000
-      - "8123:8123"   # HTTP (used by Metabase / curl)
-      - "9000:9000"   # Native TCP (used by drivers / dlt)
+      - "8123:8123"
+      - "9000:9000"
     volumes:
       - clickhouse_data:/var/lib/clickhouse
       - ./clickhouse/users.d/ftw-de-bootcamp.xml:/etc/clickhouse-server/users.d/ftw_user.xml:ro
       - ./clickhouse/initdb:/docker-entrypoint-initdb.d:ro
+      - ./references:/var/lib/clickhouse/user_files/references   # ✅ new mount line
     healthcheck:
       test: ["CMD-SHELL", "clickhouse-client --query='SELECT 1' || exit 1"]
       interval: 10s
