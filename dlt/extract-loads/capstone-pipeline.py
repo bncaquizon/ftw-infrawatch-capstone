@@ -13,14 +13,6 @@ client = clickhouse_connect.get_client(
 )
 
 
-@dlt.resource(write_disposition="append", name="psa_grdp")
-def psa_grdp():
-    ROOT_DIR = os.path.dirname(__file__)
-    STAGING_DIR = os.path.join(ROOT_DIR, "staging", "capstone")
-    FILE_PATH = os.path.join(STAGING_DIR, "grdp.csv")
-    yield pd.read_csv(FILE_PATH).astype(str)
-
-
 @dlt.resource(write_disposition="append", name="dpwh_contracts")
 def dpwh_contracts():
     ROOT_DIR = os.path.dirname(__file__)
@@ -31,9 +23,20 @@ def dpwh_contracts():
 @dlt.resource(write_disposition="append", name="doh_hospital")
 def doh_hospital():
     FILE_PATH = "/Users/louellarespuesto/ftw-infrawatch-capstone/dlt/extract-loads/doh_hospitals_combined.csv"
+    print(f"📥 Loading DOH Hospital CSV from {FILE_PATH}...")
     yield pd.read_csv(FILE_PATH).astype(str)
 
+@dlt.resource(write_disposition="append", name="psa_deped_schools")
+def psa_deped_schools():
+    FILE_PATH = "/Users/louellarespuesto/ftw-infrawatch-capstone/dlt/extract-loads/psa_deped_2019_2023.csv"
+    print(f"📥 Loading PSA Schools CSV from {FILE_PATH}...")
+    yield pd.read_csv(FILE_PATH).astype(str)
 
+@dlt.resource(write_disposition="append", name="ched_schools")
+def ched_schools():
+    FILE_PATH = "/Users/louellarespuesto/ftw-infrawatch-capstone/dlt/extract-loads/ched_23_25.csv"
+    print(f"📥 Loading CHED Schools CSV from {FILE_PATH}...")
+    yield pd.read_csv(FILE_PATH).astype(str)
 
 def run():
     print("✅ Connecting to ClickHouse (HTTP)...")
@@ -64,19 +67,19 @@ def run():
     )
 
     print("📥 Extracting resources...")
-    info = p.run([psa_grdp(), dpwh_contracts(), doh_hospital()])
+    info = p.run([dpwh_contracts(), doh_hospital(), psa_deped_schools(), ched_schools()])
     print("✅ DLT extracted data:", info)
 
     # ✅ Load extracted data manually into ClickHouse
         # ✅ Load extracted data manually into ClickHouse
         # ✅ Load extracted data manually into ClickHouse
-    for resource in ["psa_grdp", "dpwh_contracts", "doh_hospital"]:
+    for resource in [ "dpwh_contracts", "doh_hospital", "psa_deped_schools", "ched_schools"]:
         print(f"📤 Preparing {resource} data from DLT output...")
 
         # ✅ Correct modern DLT dataframe call
         df = p.dataset().table(resource).df()
 
-        table_name = f"capstone_{resource}_raw"
+        table_name = f"raw___{resource}"
 
         print(f"📤 Loading {resource} to ClickHouse table `{table_name}` ...")
 
