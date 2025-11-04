@@ -33,7 +33,7 @@ RUN pip install --no-cache-dir -r requirements.txt \
  && pip install --no-cache-dir playwright
 
 # Download Playwright’s browser binaries
-RUN playwright install chromium
+#RUN playwright install chromium
 
 # Copy .dlt secret configuration
 COPY .dlt/secrets.toml /var/dlt/.dlt/secrets.toml
