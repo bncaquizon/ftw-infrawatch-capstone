@@ -1,15 +1,14 @@
-# version: 2
+version: 2
 
-# models:
-#   - name: cylinders_by_origin
-#     description: "Mart: average cylinders and row counts by origin"
-#     columns:
-#       - name: origin
-#         tests:
-#           - not_null
-#           - accepted_values:
-#               values: ["usa", "europe", "japan"]
-#       - name: avg_cylinders
-#         description: "Average cylinders by origin"
-#       - name: n
-#         description: "Rowcount by origin"
+models:
+  - name: fact_transport
+    description: "Transportation fact table combining vehicle registrations, road network, and administrative data."
+    columns:
+      - name: region
+        description: "Region of the transport record."
+      - name: province
+        description: "Province of the transport record."
+      - name: vehicle_type
+        description: "Type/category of the vehicle."
+      - name: count
+        description: "Number of vehicles."

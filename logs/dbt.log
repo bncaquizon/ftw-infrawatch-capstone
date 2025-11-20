@@ -1,0 +1,84 @@
+[0m20:19:28.020123 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7053f82d7810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7053f82d72d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7053f830a690>]}
+
+
+============================== 20:19:28.028233 | 39c204e8-34ff-4cda-9b2a-8ce8f8c5de43 ==============================
+[0m20:19:28.028233 [info ] [MainThread]: Running with dbt=1.10.15
+[0m20:19:28.028934 [debug] [MainThread]: running dbt with arguments {'target_path': 'None', 'version_check': 'True', 'log_format': 'default', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'warn_error': 'None', 'cache_selected_only': 'False', 'invocation_command': 'dbt run', 'profiles_dir': '/home/baniq/.dbt', 'use_colors': 'True', 'empty': 'False', 'no_print': 'None', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'quiet': 'False', 'use_experimental_parser': 'False', 'printer_width': '80', 'log_path': 'logs', 'partial_parse': 'True', 'introspect': 'True', 'static_parser': 'True', 'write_json': 'True', 'log_cache_events': 'False', 'debug': 'False'}
+[0m20:19:28.029401 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/baniq/ftw-infrawatch-capstone/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m20:19:28.031597 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.07961337, "process_in_blocks": "104", "process_kernel_time": 0.48799, "process_mem_max_rss": "99812", "process_out_blocks": "8", "process_user_time": 1.359972}
+[0m20:19:28.032147 [debug] [MainThread]: Command `dbt run` failed at 20:19:28.032031 after 0.08 seconds
+[0m20:19:28.032572 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7053f813f610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7053f8148590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7053f82d7ed0>]}
+[0m20:19:28.032992 [debug] [MainThread]: Flushing usage events
+[0m20:19:38.108977 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:22:13.837979 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75c2e6987b10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75c2e6987490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75c2e69866d0>]}
+
+
+============================== 20:22:13.841500 | 9c0fe781-c2d4-4ae4-be68-846f7aa34e53 ==============================
+[0m20:22:13.841500 [info ] [MainThread]: Running with dbt=1.10.15
+[0m20:22:13.842016 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'write_json': 'True', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt init ftw-infrawatch-capstone', 'log_format': 'default', 'profiles_dir': '/home/baniq/.dbt', 'fail_fast': 'False', 'cache_selected_only': 'False', 'introspect': 'True', 'partial_parse': 'True', 'warn_error': 'None', 'log_path': 'logs', 'version_check': 'True', 'target_path': 'None', 'static_parser': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'log_cache_events': 'False', 'printer_width': '80', 'use_colors': 'True', 'send_anonymous_usage_stats': 'True', 'debug': 'False', 'quiet': 'False'}
+[0m20:26:08.507482 [error] [MainThread]: Encountered an error:
+
+[0m20:26:08.599038 [error] [MainThread]: Traceback (most recent call last):
+  File "/home/baniq/ftw-infrawatch-capstone/dbt-venv/lib/python3.11/site-packages/dbt/cli/requires.py", line 178, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/baniq/ftw-infrawatch-capstone/dbt-venv/lib/python3.11/site-packages/dbt/cli/requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/baniq/ftw-infrawatch-capstone/dbt-venv/lib/python3.11/site-packages/dbt/cli/main.py", line 483, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "/home/baniq/ftw-infrawatch-capstone/dbt-venv/lib/python3.11/site-packages/dbt/task/init.py", line 324, in run
+    project_name = self.get_valid_project_name()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/baniq/ftw-infrawatch-capstone/dbt-venv/lib/python3.11/site-packages/dbt/task/init.py", line 278, in get_valid_project_name
+    name = click.prompt("Enter a name for your project (letters, digits, underscore)")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/baniq/ftw-infrawatch-capstone/dbt-venv/lib/python3.11/site-packages/click/termui.py", line 171, in prompt
+    value = prompt_func(prompt)
+            ^^^^^^^^^^^^^^^^^^^
+  File "/home/baniq/ftw-infrawatch-capstone/dbt-venv/lib/python3.11/site-packages/click/termui.py", line 154, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m20:26:08.638890 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 224.73697, "process_in_blocks": "0", "process_kernel_time": 0.611007, "process_mem_max_rss": "100664", "process_out_blocks": "24", "process_user_time": 1.286332}
+[0m20:26:08.647258 [debug] [MainThread]: Command `dbt init` failed at 20:26:08.645798 after 224.75 seconds
+[0m20:26:08.662855 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75c2e6b2c5d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75c2e6cccbd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75c2e69906d0>]}
+[0m20:26:08.672346 [debug] [MainThread]: Flushing usage events
+[0m20:26:12.675792 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:26:15.589635 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75daf804b190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75daf83844d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75daf81e34d0>]}
+
+
+============================== 20:26:15.596279 | 110609dd-0ade-4cc6-8490-877235b3ca30 ==============================
+[0m20:26:15.596279 [info ] [MainThread]: Running with dbt=1.10.15
+[0m20:26:15.596755 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'write_json': 'True', 'invocation_command': 'dbt run --select mart_grp3', 'indirect_selection': 'eager', 'cache_selected_only': 'False', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'printer_width': '80', 'empty': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'debug': 'False', 'introspect': 'True', 'profiles_dir': '/home/baniq/.dbt', 'quiet': 'False', 'warn_error': 'None', 'use_colors': 'True', 'target_path': 'None', 'use_experimental_parser': 'False', 'partial_parse': 'True', 'log_cache_events': 'False', 'log_path': 'logs', 'no_print': 'None', 'log_format': 'default', 'fail_fast': 'False'}
+[0m20:26:15.597134 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/baniq/ftw-infrawatch-capstone/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m20:26:15.597974 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.07143891, "process_in_blocks": "0", "process_kernel_time": 0.814951, "process_mem_max_rss": "100176", "process_out_blocks": "0", "process_user_time": 1.378809}
+[0m20:26:15.598373 [debug] [MainThread]: Command `dbt run` failed at 20:26:15.598285 after 0.07 seconds
+[0m20:26:15.598723 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75daf81ec590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75daf8384d90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75daf90f7350>]}
+[0m20:26:15.599121 [debug] [MainThread]: Flushing usage events
+[0m20:26:16.496752 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:26:21.185054 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76ee5063b210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76ee50472b90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76ee50472a10>]}
+
+
+============================== 20:26:21.188217 | b2a8d1ff-f0ce-4e5b-baf3-bc5533f8ef5a ==============================
+[0m20:26:21.188217 [info ] [MainThread]: Running with dbt=1.10.15
+[0m20:26:21.188707 [debug] [MainThread]: running dbt with arguments {'use_experimental_parser': 'False', 'printer_width': '80', 'fail_fast': 'False', 'indirect_selection': 'eager', 'log_format': 'default', 'version_check': 'True', 'invocation_command': 'dbt run --select mart_grp3', 'log_cache_events': 'False', 'no_print': 'None', 'use_colors': 'True', 'target_path': 'None', 'quiet': 'False', 'cache_selected_only': 'False', 'warn_error': 'None', 'introspect': 'True', 'log_path': 'logs', 'profiles_dir': '/home/baniq/.dbt', 'partial_parse': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'write_json': 'True', 'static_parser': 'True', 'empty': 'False', 'send_anonymous_usage_stats': 'True', 'debug': 'False'}
+[0m20:26:21.189101 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/baniq/ftw-infrawatch-capstone/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m20:26:21.189837 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.054503825, "process_in_blocks": "0", "process_kernel_time": 0.414923, "process_mem_max_rss": "100056", "process_out_blocks": "0", "process_user_time": 1.196726}
+[0m20:26:21.190233 [debug] [MainThread]: Command `dbt run` failed at 20:26:21.190143 after 0.06 seconds
+[0m20:26:21.190534 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76ee507e4990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76ee5063b210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76ee5063ba10>]}
+[0m20:26:21.190846 [debug] [MainThread]: Flushing usage events
+[0m20:26:22.177798 [debug] [MainThread]: An error was encountered while trying to flush usage events

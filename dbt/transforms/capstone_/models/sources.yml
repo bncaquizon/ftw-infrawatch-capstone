@@ -1,12 +1,12 @@
 version: 2
 
 sources:
-  - name: raw
-    schema: raw
+  - name: clean_grp3
     tables:
-      - name: raw___insta_aisles
-      - name: raw___insta_departments
-      - name: raw___insta_order_products_prior
-      - name: raw___insta_order_products_train
-      - name: raw___insta_orders
-      - name: raw___insta_products
+      - name: clean_lto_motor_vehicles
+      - name: clean_dpwh_avg_iri
+      - name: clean_dpwh_road_density
+      - name: clean_dpwh_bridge_condition
+  - name: mart_grp3
+    tables:
+      - name: dim_region
