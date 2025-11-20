@@ -29,46 +29,6 @@ import os
 #     yield pd.read_csv(FILE_PATH).astype(str)
 
 
-# --- GRDP by Industry resource ---
-@dlt.resource(write_disposition="append", name="psa_grdp_by_industry")
-def psa_grdp_by_industry():
-    ROOT_DIR = os.path.dirname(__file__)
-    STAGING_DIR = os.path.join(ROOT_DIR, "staging", "capstone")
-    FILE_PATH = os.path.join(STAGING_DIR, "grdp_by_industry.csv")
-    yield pd.read_csv(FILE_PATH).astype(str)
-
-# --- GRDP per capita resource ---
-@dlt.resource(write_disposition="append", name="psa_grdp_per_capita")
-def psa_grdp_per_capita():
-    ROOT_DIR = os.path.dirname(__file__)
-    STAGING_DIR = os.path.join(ROOT_DIR, "staging", "capstone")
-    FILE_PATH = os.path.join(STAGING_DIR, "grdp_per_capita.csv")
-    yield pd.read_csv(FILE_PATH).astype(str)
-
-# --- Population Growth Rate resource ---
-@dlt.resource(write_disposition="append", name="psa_population_growth_rate")
-def psa_population_growth_rate():
-    ROOT_DIR = os.path.dirname(__file__)
-    STAGING_DIR = os.path.join(ROOT_DIR, "staging", "capstone")
-    FILE_PATH = os.path.join(STAGING_DIR, "population_growth_rate.csv")
-    yield pd.read_csv(FILE_PATH).astype(str)
-
-# --- Population Density resource ---
-@dlt.resource(write_disposition="append", name="psa_population_density")
-def psa_population_density():
-    ROOT_DIR = os.path.dirname(__file__)
-    STAGING_DIR = os.path.join(ROOT_DIR, "staging", "capstone")
-    FILE_PATH = os.path.join(STAGING_DIR, "population_density.csv")
-    yield pd.read_csv(FILE_PATH).astype(str)
-
-# --- DPWH Road Density resource ---
-@dlt.resource(write_disposition="append", name="dpwh_road_density") 
-def dpwh_road_density():
-    ROOT_DIR = os.path.dirname(__file__)
-    STAGING_DIR = os.path.join(ROOT_DIR, "staging", "capstone")
-    FILE_PATH = os.path.join(STAGING_DIR, "dpwh_road_density.csv")
-    yield pd.read_csv(FILE_PATH).astype(str)
-
 @dlt.resource(write_disposition="append", name="cmci_AvailabilityofBasicUtilities")
 def cmci_availability_of_basic_utilities():
     ROOT_DIR = os.path.dirname(__file__)
@@ -156,7 +116,6 @@ def cmci_utilities():
 
 
 
-
 def run():
     p = dlt.pipeline(
         pipeline_name="capstone-pipeline",
@@ -167,16 +126,7 @@ def run():
     # info1 = p.run(grdp())          # dlt pulls creds from env-vars
     # print("records loaded:", info1)
 
-    info2 = p.run(psa_grdp_by_industry())          # dlt pulls creds from env-vars
-    print("records loaded:", info2)
-    info3 = p.run(psa_grdp_per_capita())          # dlt pulls creds from env-vars
-    print("records loaded:", info3)
-    info4 = p.run(psa_population_growth_rate())          # dlt pulls creds from env-vars
-    print("records loaded:", info4)
-    info5 = p.run(psa_population_density())          # dlt pulls creds from env-vars
-    print("records loaded:", info5)
-    info6 = p.run(dpwh_road_density())          # dlt pulls creds from env-vars
-    print("records loaded:", info6)
+
     info7 = p.run(cmci_availability_of_basic_utilities())          # dlt pulls creds from env-vars
     print("records loaded:", info7)
     info8 = p.run((cmci_basic_internet_service))          # dlt pulls creds from env-vars
@@ -201,7 +151,6 @@ def run():
     print("records loaded:", info17)
     info18 = p.run((cmci_utilities))          # dlt pulls creds from
     print("records loaded:", info18)
-
 
 if __name__ == "__main__":
     run()
