@@ -155,19 +155,47 @@ def cmci_utilities():
     FILE_PATH = os.path.join(STAGING_DIR, "cmci_util.csv")
     yield pd.read_csv(FILE_PATH).astype(str)
 
+@dlt.resource(write_disposition="append", name="doh_hospital")
+def doh_hospital():
+    FILE_PATH = "/var/dlt/extract-loads/doh_hospital_total_counts.csv"
+    print(f"📥 Loading DOH Hospital CSV from {FILE_PATH}...")
+    yield pd.read_csv(FILE_PATH).astype(str)
 
+@dlt.resource(write_disposition="append", name="psa_basic_water_access")
+def psa_basic_water_access():
+    FILE_PATH = "/var/dlt/extract-loads/psa_basic_water_access.csv"
+    print(f"📥 Loading DOH Hospital CSV from {FILE_PATH}...")
+    yield pd.read_csv(FILE_PATH).astype(str)
 
+@dlt.resource(write_disposition="append", name="psa_deped_schools")
+def psa_deped_schools():
+    FILE_PATH = "/var/dlt/extract-loads/psa_deped_sch_2019_2023.csv"
+    print(f"📥 Loading PSA DepEd Schools CSV from {FILE_PATH}...")
+    yield pd.read_csv(FILE_PATH).astype(str)
 
+@dlt.resource(write_disposition="append", name="deped_enrollees_21_22")
+def deped_enrollees_21_22():
+    FILE_PATH = "/var/dlt/extract-loads/deped_enrollees_21_22.xlsx"
+    print(f"📥 Loading DEPED Enrollees (2021–2021) CSV from {FILE_PATH}...")
+    yield pd.read_excel(FILE_PATH).astype(str)
 
-def run():
-    p = dlt.pipeline(
-        pipeline_name="capstone-pipeline",
-        destination="clickhouse",
-        dataset_name="raw",
-    )
-    print("Fetching and loading...")
-    # info1 = p.run(grdp())          # dlt pulls creds from env-vars
-    # print("records loaded:", info1)
+@dlt.resource(write_disposition="append", name="deped_enrollees_22_23")
+def deped_enrollees_22_23():
+    FILE_PATH = "/var/dlt/extract-loads/deped_enrollees_22_23.xlsx"
+    print(f"📥 Loading DEPED Enrollees (2022–2023) CSV from {FILE_PATH}...")
+    yield pd.read_excel(FILE_PATH).astype(str)
+
+@dlt.resource(write_disposition="append", name="ched_schools_22_25")
+def ched_schools_22_25():
+    FILE_PATH = "/var/dlt/extract-loads/ched_schools_22_25.csv"
+    print(f"📥 Loading CHED Schools (2022–2025) CSV from {FILE_PATH}...")
+    yield pd.read_csv(FILE_PATH).astype(str)
+
+@dlt.resource(write_disposition="append", name="ched_enrollees_20_24")
+def ched_enrollees_20_24():
+    FILE_PATH = "/var/dlt/extract-loads/ched_enrollees_20_24.csv"
+    print(f"📥 Loading CHED Enrollees (2020–2024) CSV from {FILE_PATH}...")
+    yield pd.read_csv(FILE_PATH).astype(str)
 
 # -------------------------------
 # Unemployment data resource
@@ -231,6 +259,21 @@ def run():
     print("records loaded:", info17)
     info18 = p.run((cmci_utilities))          # dlt pulls creds from
     print("records loaded:", info18)
+    info19 = p.run((doh_hospital))         
+    print("records loaded:", info19)
+    info20 = p.run((psa_deped_schools))         
+    print("records loaded:", info20)
+    info21 = p.run((deped_enrollees_21_22))         
+    print("records loaded:", info21)
+    info22 = p.run((deped_enrollees_22_23))         
+    print("records loaded:", info22)
+    info23 = p.run((ched_enrollees_20_24))         
+    print("records loaded:", info23)
+    info24 = p.run((ched_schools_22_25))         
+    print("records loaded:", info24)
+    info25 = p.run((psa_basic_water_access))         
+    print("records loaded:", info25)
+
 
 
 if __name__ == "__main__":
