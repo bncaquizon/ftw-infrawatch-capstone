@@ -1,7 +1,90 @@
 version: 2
 
 sources:
-  - name: raw
-    schema: raw
+  - name: raw_grp3
+    schema: raw_grp3
+    tables:
+      - name: raw___dpwh_road_density
+      - name: raw___psa_grdp_per_capita
+      - name: raw___psa_population_density
+      - name: raw___psa_population_growth_rate
+      - name: raw___dpwh_bridge_condition
+      - name: raw___lto_motor_vehicles
+      - name: raw___dpwh_avg_iri
+      - name: raw___psa_labor_force_participation
+      - name: raw___cmci_economicdyna
+      - name: raw___ched_enrollees_20_24
+      - name: raw___ched_schools_21_22
+      - name: raw___ched_schools_22_25
+      - name: raw___cmci_availabilityof_basic_utilities
+      - name: raw___cmci_economicdyna
+      - name: raw___cmci_employee_population
+      - name: raw___cmci_health
+      - name: raw___cmci_internetcapability
+      - name: raw___cmci_pbpo
+      - name: raw___cmci_road
+      - name: raw___cmci_school
+      - name: raw___cmci_trans
+      - name: raw___cmci_util
+      - name: raw___deped_enrollees_21_22
+      - name: raw___deped_enrollees_22_23
+      - name: raw___deped_enrolless_21_22
+      - name: raw___dof_ari
+      - name: raw___doh_hospital
+      - name: raw___pdc_disaster_index
+      - name: raw___pdc_multihazard
+      - name: raw___psa_basic_water_access
+      - name: raw___psa_deped_schools
+      - name: raw___psa_grdp
+      - name: raw___psa_grdp_by_industry
+      - name: raw___psa_net_enrollment_rate
+      - name: raw___psa_poverty_incidence
+      - name: raw___psa_projected_population
+      - name: raw___psa_unemployment_rate
+
+  - name: clean_grp3
+    schema: clean_grp3 
+    tables:
+      - name: clean_cmci_economicdyna
+      - name: clean_ched_enrollees_20_24
+      - name: clean_ched_schools_21_22
+      - name: clean_ched_schools_22_25
+      - name: clean_cmci_availabilityof_basic_utilities
+      - name: clean_cmci_health
+      - name: clean_cmci_internetcapability
+      - name: clean_cmci_pbpo
+      - name: clean_cmci_school
+      - name: clean_cmci_util
+      - name: clean_deped_enrollees_21_22
+      - name: clean_deped_enrollees_22_23
+      - name: clean_doh_hospital_counts
+      - name: clean_dpwh_avg_iri
+      - name: clean_dpwh_bridge_condition
+      - name: clean_dpwh_projects
+      - name: clean_dpwh_road_density
+      - name: clean_lto_motor_vehicles
+      - name: clean_pdc_disaster_index
+      - name: clean_pdc_multihazard
+      - name: clean_psa_basic_water_access
+      - name: clean_psa_grdp_per_capita
+      - name: clean_psa_labor_force_participation
+      - name: clean_psa_population_density
+      - name: clean_psa_population_growth_rate
+      - name: clean_psa_school_counts
+      - name: placeholder_psa_net_enrollment_rate
+
+  - name: mart_grp3
+    schema: mart_grp3
     tables:
       - name: dim_region
+      - name: fact_population
+      - name: fact_development
+      - name: fact_disaster_risk
+      - name: fact_transport
+      - name: fact_social_services
+      - name: fact_hospital
+      - name: fact_major_indicator
+      - name: fact_schools
+      - name: fact_water_access
+
+
