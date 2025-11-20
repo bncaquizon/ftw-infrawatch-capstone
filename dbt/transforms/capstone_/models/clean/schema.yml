@@ -1,39 +1,281 @@
-# version: 2
+version: 2
 
-# models:
-#   - name: mpg_standardized
-#     description: "Standardized Auto MPG (typed + trimmed) loaded from raw.autompg___cars"
-#     columns:
-#       - name: mpg
-#         description: "Miles per gallon"
-#         tests:
-#           - not_null
+models:
+  - name: clean_dpwh_avg_iri
+    description: "Cleaned DPWH Average IRI (International Roughness Index) data for trend and road quality analysis."
+    tags: ["clean", "dpwh"]
+    columns:
+      - name: region
+        description: "Region name, standardized to uppercase."
+        tests:
+          - not_null
+          - unique
+      - name: avg_iri
+        description: "Average IRI value for the road segment."
+        tests:
+          - not_null
 
-#       - name: cylinders
-#         description: "Cylinder count"
-#         tests:
-#           - not_null
-#           - accepted_values:
-#               values: [3, 4, 5, 6, 8]
+  - name: clean_dpwh_bridge_condition
+    description: "Cleaned DPWH bridge condition data for structural health analysis."
+    tags: ["clean", "dpwh"]
+    columns:
+      - name: region
+        description: "Region name, standardized to uppercase."
+        tests:
+          - not_null
+          - unique
+      - name: total_good
+        description: "Bridge condition score or index."
+        tests:
+          - not_null
+      - name: percent_good
+        description: "Bridge condition score or index."
+        tests:
+          - not_null
+      - name: total_fair
+        description: "Bridge condition score or index."
+        tests:
+          - not_null
+      - name: percent_fair
+        description: "Bridge condition score or index."
+        tests:
+          - not_null
+      - name: total_poor
+        description: "Bridge condition score or index."
+        tests:
+          - not_null
+      - name: percent_poor
+        description: "Bridge condition score or index."
+        tests:
+          - not_null
+      - name: total_bad
+        description: "Bridge condition score or index."
+        tests:
+          - not_null
+      - name: percent_bad
+        description: "Bridge condition score or index."
+        tests:
+          - not_null
+      - name: further_assessment
+        description: "Bridge condition score or index."
+        tests:
+          - not_null
+      - name: percent_further_assessment
+        description: "Bridge condition score or index."
+        tests:
+          - not_null
+      - name: grand_total
+        description: "Bridge condition score or index."
+        tests:
+          - not_null
+      - name: percent_grand_total
+        description: "Bridge condition score or index."
+        tests:
+          - not_null
 
-#       - name: displacement
-#         tests: [not_null]
 
-#       - name: weight
-#         tests: [not_null]
+  - name: clean_dpwh_road_density
+    description: "Cleaned DPWH road density data for transport infrastructure analysis."
+    tags: ["clean", "dpwh"]
+    columns:
+      - name: region
+        description: "Region name, standardized to uppercase."
+        tests:
+          - not_null
+          - unique
+      - name: "2012"
+        description: "Road density expressed in km per square km."
+        tests:
+          - not_null
+      - name: "2013"
+        description: "Road density expressed in km per square km."
+        tests:
+          - not_null
+      - name: "2014"
+        description: "Road density expressed in km per square km."
+        tests:
+          - not_null
+      - name: "2015"
+        description: "Road density expressed in km per square km."
+        tests:
+          - not_null
+      - name: "2016"
+        description: "Road density expressed in km per square km."
+        tests:
+          - not_null
+      - name: "2017"
+        description: "Road density expressed in km per square km."
+        tests:
+          - not_null
+      - name: "2018"
+        description: "Road density expressed in km per square km."
+        tests:
+          - not_null
+      - name: "2019"
+        description: "Road density expressed in km per square km."
+        tests:
+          - not_null
+      - name: "2020"
+        description: "Road density expressed in km per square km."
+        tests:
+          - not_null
+      - name: "2021"
+        description: "Road density expressed in km per square km."
+        tests:
+          - not_null
+      - name: "2022"
+        description: "Road density expressed in km per square km."
+        tests:
+          - not_null
+      - name: "2023"
+        description: "Road density expressed in km per square km."
+        tests:
+          - not_null
+      - name: "2024"
+        description: "Road density expressed in km per square km."
+        tests:
+          - not_null
 
-#       - name: acceleration
-#         tests: [not_null]
 
-#       - name: model_year
-#         tests: [not_null]
+  - name: clean_lto_motor_vehicles
+    description: "Cleaned LTO motor vehicle registration data for trend analysis (2022–2024)."
+    tags: ["clean", "lto", "psa"]
+    columns:
+      - name: region
+        description: "Region name, standardized to uppercase."
+        tests:
+          - not_null
+          - unique
+      - name: motor_vehi_reg_2022
+        description: "Number of registered motor vehicles in 2022."
+        tests:
+          - not_null
+      - name: motor_vehi_reg_2023
+        description: "Number of registered motor vehicles in 2023."
+        tests:
+          - not_null
+      - name: motor_vehi_reg_2024
+        description: "Number of registered motor vehicles in 2024."
+        tests:
+          - not_null
+      - name: percent_inc_dec_2022_2023
+        description: "Percent change in motor vehicle registrations from 2022 to 2023."
+      - name: percent_inc_dec_2023_2024
+        description: "Percent change in motor vehicle registrations from 2023 to 2024."
 
-#       - name: origin
-#         description: "Country of origin"
-#         tests:
-#           - not_null
-#           - accepted_values:
-#               values: ["usa", "europe", "japan"]
+  - name: clean_psa_grdp_per_capita
+    description: "Cleaned PSA GRDP per capita data for economic analysis."
+    tags: ["clean", "psa"]
+    columns:
+      - name: region
+        description: "Region name, standardized to uppercase."
+        tests:
+          - not_null
+          - unique
+      - name: year_2022
+        description: "Gross Regional Domestic Product per capita."
+        tests:
+          - not_null
+      - name: year_2023
+        description: "Gross Regional Domestic Product per capita."
+        tests:
+          - not_null
+      - name: year_2024
+        description: "Gross Regional Domestic Product per capita."
+        tests:
+          - not_null
+      - name: growth_rate_2022_2023
+        description: "Gross Regional Domestic Product per capita."
+        tests:
+          - not_null
+      - name: growth_rate_2023_2024
+        description: "Gross Regional Domestic Product per capita."
+        tests:
+          - not_null
+           
+  - name: clean_psa_labor_force_participation
+    description: "Cleaned PSA labor force participation and employment rates for trend analysis (2024–2025)."
+    tags: ["clean", "psa"]
+    columns:
+      - name: region
+        description: "Region name, standardized to uppercase."
+        tests:
+          - not_null
+          - unique
+      - name: labor_force_parti_rate_2024
+        description: "Labor force participation rate for 2024."
+      - name: labor_force_parti_rate_jan_2025
+        description: "Labor force participation rate for January 2025."
+      - name: labor_force_parti_rate_april_2025
+        description: "Labor force participation rate for April 2025."
+      - name: labor_force_parti_rate_july_2025
+        description: "Labor force participation rate for July 2025."
+      - name: employment_rate_jul_2024
+        description: "Employment rate for July 2024."
+      - name: employment_rate_jan_2025
+        description: "Employment rate for January 2025."
+      - name: employment_rate_april_2025
+        description: "Employment rate for April 2025."
+      - name: employment_rate_jul_2025
+        description: "Employment rate for July 2025."
 
-#       - name: make
-#         description: "Vehicle make/model (string)"
+  - name: clean_psa_population_density
+    description: "Cleaned PSA population density data for demographic analysis."
+    tags: ["clean", "psa"]
+    columns:
+      - name: region
+        description: "Region name, standardized to uppercase."
+        tests:
+          - not_null
+          - unique
+      - name: population_2010
+        description: "Population in 2010."
+      - name: population_2015
+        description: "Population in 2015."
+      - name: population_2020
+        description: "Population in 2020."
+      - name: population_2024
+        description: "Population in 2024."
+      - name: land_area
+        description: "Land area of the region."
+      - name: population_density_2010
+        description: "Population density in 2010."
+      - name: population_density_2015
+        description: "Population density in 2015."
+      - name: population_density_2020
+        description: "Population density in 2020."
+      - name: population_density_2024
+        description: "Population density in 2024."
+      - name: density_growth_rate_2010_2024
+        description: "Population density growth rate from 2010 to 2024."
+      - name: urban_pop_growth_2010_2020
+        description: "Urban population growth 2010 to 2020."
+      - name: urban_pop_growth_2010_2024
+        description: "Urban population growth 2010 to 2024."
+
+
+  - name: clean_psa_population_growth_rate
+    description: "Cleaned PSA population growth rate data for demographic trend analysis."
+    tags: ["clean", "psa"]
+    columns:
+      - name: region
+        description: "Region name, standardized to uppercase."
+        tests:
+          - not_null
+          - unique
+      - name: year_2010
+        description: "Population growth rate from 2010 to 2020."
+      - name: year_2015
+        description: "Population growth rate from 2010 to 2024."
+      - name: year_2020
+        description: "Population growth rate from 2010 to 2020."
+      - name: year_2024
+        description: "Population growth rate from 2010 to 2024."
+      - name: growth_rate_2010_2015
+        description: "Population growth rate from 2010 to 2020."
+      - name: growth_rate_2015_2020
+        description: "Population growth rate from 2010 to 2024."
+      - name: growth_rate_2015_2024
+        description: "Population growth rate from 2010 to 2020."
+      - name: growth_rate_2020_2024
+        description: "Population growth rate from 2010 to 2024."
