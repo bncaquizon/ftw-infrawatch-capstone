@@ -3,7 +3,6 @@ import dlt
 import pandas as pd
 import os
 
-HEAD
 # https://archive.ics.uci.edu/dataset/9/auto+mpg
 # @dlt.resource(name="capstone")
 # def mpg():
@@ -22,55 +21,96 @@ HEAD
     #FILE_PATH = os.path.join(STAGING_DIR, "mpg.xlsx")
     #yield pd.read_excel(FILE_PATH).astype(str)
 
-# # --- GRDP resource ---
-# @dlt.resource(write_disposition="append", name="grdp")
-# def grdp():
-#     ROOT_DIR = os.path.dirname(__file__)
-#     STAGING_DIR = os.path.join(ROOT_DIR, "staging", "capstone")
-#     FILE_PATH = os.path.join(STAGING_DIR, "grdp.csv")
-#     yield pd.read_csv(FILE_PATH).astype(str)
+# --- GRDP resource ---
+@dlt.resource(write_disposition="append", name="psa_grdp")
+def grdp():
+    ROOT_DIR = os.path.dirname(__file__)
+    STAGING_DIR = os.path.join(ROOT_DIR, "staging", "capstone")
+    FILE_PATH = os.path.join(STAGING_DIR, "psa_grdp.csv")
+    yield pd.read_csv(FILE_PATH).astype(str)
 
 
 # --- GRDP by Industry resource ---
 @dlt.resource(write_disposition="append", name="psa_grdp_by_industry")
-def psa_grdp_by_industry():
+def grdp_by_industry():
     ROOT_DIR = os.path.dirname(__file__)
     STAGING_DIR = os.path.join(ROOT_DIR, "staging", "capstone")
-    FILE_PATH = os.path.join(STAGING_DIR, "grdp_by_industry.csv")
+    FILE_PATH = os.path.join(STAGING_DIR, "psa_grdp_by_industry.csv")
     yield pd.read_csv(FILE_PATH).astype(str)
 
 # --- GRDP per capita resource ---
 @dlt.resource(write_disposition="append", name="psa_grdp_per_capita")
-def psa_grdp_per_capita():
+def grdp_per_capita():
     ROOT_DIR = os.path.dirname(__file__)
     STAGING_DIR = os.path.join(ROOT_DIR, "staging", "capstone")
-    FILE_PATH = os.path.join(STAGING_DIR, "grdp_per_capita.csv")
+    FILE_PATH = os.path.join(STAGING_DIR, "psa_grdp_per_capita.csv")
     yield pd.read_csv(FILE_PATH).astype(str)
 
 # --- Population Growth Rate resource ---
 @dlt.resource(write_disposition="append", name="psa_population_growth_rate")
-def psa_population_growth_rate():
+def population_growth_rate():
     ROOT_DIR = os.path.dirname(__file__)
     STAGING_DIR = os.path.join(ROOT_DIR, "staging", "capstone")
-    FILE_PATH = os.path.join(STAGING_DIR, "population_growth_rate.csv")
+    FILE_PATH = os.path.join(STAGING_DIR, "psa_population_growth_rate.csv")
     yield pd.read_csv(FILE_PATH).astype(str)
 
 # --- Population Density resource ---
 @dlt.resource(write_disposition="append", name="psa_population_density")
-def psa_population_density():
+def population_density():
     ROOT_DIR = os.path.dirname(__file__)
     STAGING_DIR = os.path.join(ROOT_DIR, "staging", "capstone")
-    FILE_PATH = os.path.join(STAGING_DIR, "population_density.csv")
+    FILE_PATH = os.path.join(STAGING_DIR, "psa_population_density.csv")
     yield pd.read_csv(FILE_PATH).astype(str)
 
 # --- DPWH Road Density resource ---
-@dlt.resource(write_disposition="append", name="dpwh_road_density") 
+@dlt.resource(write_disposition="append", name="dpwh_road_density")
 def dpwh_road_density():
     ROOT_DIR = os.path.dirname(__file__)
     STAGING_DIR = os.path.join(ROOT_DIR, "staging", "capstone")
     FILE_PATH = os.path.join(STAGING_DIR, "dpwh_road_density.csv")
     yield pd.read_csv(FILE_PATH).astype(str)
 
+# # --- Poverty Incidence resource ---
+@dlt.resource(write_disposition="append", name="psa_poverty_incidence")
+def poverty_incidence():
+    ROOT_DIR = os.path.dirname(__file__)
+    STAGING_DIR = os.path.join(ROOT_DIR, "staging", "capstone")
+    FILE_PATH = os.path.join(STAGING_DIR, "psa_poverty_incidence.csv")
+    yield pd.read_csv(FILE_PATH).astype(str)
+
+# --- Labor Force Participation resource ---
+@dlt.resource(write_disposition="append", name="psa_labor_force_participation")
+def labor_force_participation():
+    ROOT_DIR = os.path.dirname(__file__)
+    STAGING_DIR = os.path.join(ROOT_DIR, "staging", "capstone")
+    FILE_PATH = os.path.join(STAGING_DIR, "psa_labor_force_participation.csv")
+    yield pd.read_csv(FILE_PATH).astype(str)
+
+
+# --- DPWH Bridge Condition resource ---
+@dlt.resource(write_disposition="append", name="dpwh_bridge_condition")
+def bridge_condition():
+    ROOT_DIR = os.path.dirname(__file__)
+    STAGING_DIR = os.path.join(ROOT_DIR, "staging", "capstone")
+    FILE_PATH = os.path.join(STAGING_DIR, "dpwh_bridge_condition_change.csv")
+    yield pd.read_csv(FILE_PATH).astype(str)
+
+# --- DPWH Avg IRI resource ---
+@dlt.resource(write_disposition="append", name="dpwh_avg_iri")
+def avg_iri():
+    ROOT_DIR = os.path.dirname(__file__)
+    STAGING_DIR = os.path.join(ROOT_DIR, "staging", "capstone")
+    FILE_PATH = os.path.join(STAGING_DIR, "dpwh_avg_iri.csv")
+    yield pd.read_csv(FILE_PATH).astype(str)
+
+# --- LTO Motor Vehicles resource ---
+@dlt.resource(write_disposition="append", name="lto_motor_vehicles")
+def motor_vehicles():
+    ROOT_DIR = os.path.dirname(__file__)
+    STAGING_DIR = os.path.join(ROOT_DIR, "staging", "capstone")
+    FILE_PATH = os.path.join(STAGING_DIR, "lto_motor_vehicles.csv")
+    yield pd.read_csv(FILE_PATH).astype(str)
+   
 @dlt.resource(write_disposition="append", name="cmci_AvailabilityofBasicUtilities")
 def cmci_availability_of_basic_utilities():
     ROOT_DIR = os.path.dirname(__file__)
@@ -209,7 +249,6 @@ def unemployment_data():
     # Read CSV and cast everything to string for safe loading
     yield pd.read_csv(FILE_PATH).astype(str)
 
-
 # -------------------------------
 # Run pipeline
 # -------------------------------
@@ -273,6 +312,24 @@ def run():
     print("records loaded:", info24)
     info25 = p.run((psa_basic_water_access))         
     print("records loaded:", info25)
+
+
+    info26 = p.run(grdp_per_capita())          # dlt pulls creds from env-vars
+    print("records loaded:", info26)
+    info27 = p.run(population_growth_rate())          # dlt pulls creds from env-vars
+    print("records loaded:", info27)
+    info28 = p.run(population_density())          # dlt pulls creds from env-vars
+    print("records loaded:", info28)
+    info29 = p.run(dpwh_road_density())          # dlt pulls creds from env-vars
+    print("records loaded:", info29)
+    info30 = p.run(labor_force_participation())          # dlt pulls creds from env-vars
+    print("records loaded:", info30)
+    info31 = p.run(bridge_condition())          # dlt pulls creds from env-vars
+    print("records loaded:", info31)
+    info32 = p.run(avg_iri())          # dlt pulls creds from env-vars
+    print("records loaded:", info32)
+    info33 = p.run(motor_vehicles())          # dlt pulls creds from env-vars
+    print("records loaded:", info33)
 
 
 
