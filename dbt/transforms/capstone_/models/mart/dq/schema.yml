@@ -1,0 +1,377 @@
+version: 2
+
+models:
+  # DPWH Average IRI
+  - name: dq_dpwh_avg_iri_summary
+    description: "Data quality summary for DPWH Average IRI table"
+    columns:
+      - name: row_count_raw
+        description: "Total number of rows in the raw DPWH Average IRI table"
+      - name: row_count_clean
+        description: "Total number of rows in the clean DPWH Average IRI table"
+      - name: dropped_rows
+        description: "Number of rows dropped during cleaning (raw - clean)"
+      - name: null_pct_region
+        description: "Percentage of null values in the region column"
+      - name: duplicate_regions
+        description: "Count of duplicate region entries in the clean table"
+      - name: negative_iri
+        description: "Count of rows with negative Average IRI values"
+      - name: outlier_jump
+        description: "Count of rows with extreme year-to-year IRI jumps"
+
+  - name: dq_dpwh_avg_iri_anomalies
+    description: "Row-level data quality anomalies for DPWH Average IRI table"
+    columns:
+      - name: region
+        description: "Region name in uppercase"
+      - name: year_2012
+        description: "Average IRI for year 2012"
+      - name: year_2013
+        description: "Average IRI for year 2013"
+      - name: year_2014
+        description: "Average IRI for year 2014"
+      - name: year_2015
+        description: "Average IRI for year 2015"
+      - name: year_2016
+        description: "Average IRI for year 2016"
+      - name: year_2017
+        description: "Average IRI for year 2017"
+      - name: year_2018
+        description: "Average IRI for year 2018"
+      - name: year_2019
+        description: "Average IRI for year 2019"
+      - name: year_2020
+        description: "Average IRI for year 2020"
+      - name: year_2021
+        description: "Average IRI for year 2021"
+      - name: year_2022
+        description: "Average IRI for year 2022"
+      - name: year_2023
+        description: "Average IRI for year 2023"
+      - name: year_2024
+        description: "Average IRI for year 2024"
+      - name: dq_issue
+        description: "Classification of the detected data quality issue for the row (null_region, negative_iri, outlier_jump)"
+
+  # DPWH Bridge Condition
+  - name: dq_dpwh_bridge_condition_summary
+    description: "Data quality summary for DPWH Bridge Condition table"
+    columns:
+      - name: row_count_raw
+        description: "Total number of rows in the raw DPWH Bridge Condition table"
+      - name: row_count_clean
+        description: "Total number of rows in the clean DPWH Bridge Condition table"
+      - name: dropped_rows
+        description: "Number of rows dropped during cleaning (raw - clean)"
+      - name: null_pct_region
+        description: "Percentage of null values in the region column"
+      - name: duplicate_regions
+        description: "Count of duplicate region entries in the clean table"
+      - name: negative_condition
+        description: "Count of rows with negative bridge condition index values"
+      - name: outlier_jump
+        description: "Count of rows with extreme year-to-year condition index jumps"
+
+  - name: dq_dpwh_bridge_condition_anomalies
+    description: "Row-level data quality anomalies for DPWH Bridge Condition table"
+    columns:
+      - name: region
+        description: "Region name in uppercase"
+      - name: year_2012
+        description: "Bridge condition index for year 2012"
+      - name: year_2013
+        description: "Bridge condition index for year 2013"
+      - name: year_2014
+        description: "Bridge condition index for year 2014"
+      - name: year_2015
+        description: "Bridge condition index for year 2015"
+      - name: year_2016
+        description: "Bridge condition index for year 2016"
+      - name: year_2017
+        description: "Bridge condition index for year 2017"
+      - name: year_2018
+        description: "Bridge condition index for year 2018"
+      - name: year_2019
+        description: "Bridge condition index for year 2019"
+      - name: year_2020
+        description: "Bridge condition index for year 2020"
+      - name: year_2021
+        description: "Bridge condition index for year 2021"
+      - name: year_2022
+        description: "Bridge condition index for year 2022"
+      - name: year_2023
+        description: "Bridge condition index for year 2023"
+      - name: year_2024
+        description: "Bridge condition index for year 2024"
+      - name: dq_issue
+        description: "Classification of the detected data quality issue for the row (null_region, negative_condition, outlier_jump)"
+
+  # DPWH Road Density
+  - name: dq_dpwh_road_density_summary
+    description: "Data quality summary for DPWH Road Density table"
+    columns:
+      - name: row_count_raw
+        description: "Total number of rows in the raw DPWH road density table"
+      - name: row_count_clean
+        description: "Total number of rows in the clean DPWH road density table"
+      - name: dropped_rows
+        description: "Number of rows dropped during cleaning (raw - clean)"
+      - name: null_pct_region
+        description: "Percentage of null values in the region column"
+      - name: duplicate_regions
+        description: "Count of duplicate region entries in the clean table"
+      - name: negative_density
+        description: "Count of rows with negative road density values across any year 2012–2024"
+      - name: outlier_jump
+        description: "Count of rows where year-to-year road density jumps exceed 500 units"
+
+  - name: dq_dpwh_road_density_anomalies
+    description: "Row-level data quality anomalies for DPWH Road Density table"
+    columns:
+      - name: region
+        description: "Region name in uppercase"
+      - name: year_2012
+        description: "Road density for year 2012"
+      - name: year_2013
+        description: "Road density for year 2013"
+      - name: year_2014
+        description: "Road density for year 2014"
+      - name: year_2015
+        description: "Road density for year 2015"
+      - name: year_2016
+        description: "Road density for year 2016"
+      - name: year_2017
+        description: "Road density for year 2017"
+      - name: year_2018
+        description: "Road density for year 2018"
+      - name: year_2019
+        description: "Road density for year 2019"
+      - name: year_2020
+        description: "Road density for year 2020"
+      - name: year_2021
+        description: "Road density for year 2021"
+      - name: year_2022
+        description: "Road density for year 2022"
+      - name: year_2023
+        description: "Road density for year 2023"
+      - name: year_2024
+        description: "Road density for year 2024"
+      - name: dq_issue
+        description: "Classification of the detected data quality issue for the row (null_region, negative_density, outlier_jump)"
+
+  # LTO Motor Vehicles
+  - name: dq_lto_motor_vehicles_summary
+    description: "Data quality summary for LTO Motor Vehicles table"
+    columns:
+      - name: row_count_raw
+        description: "Total number of rows in the raw LTO motor vehicles table"
+      - name: row_count_clean
+        description: "Total number of rows in the clean LTO motor vehicles table"
+      - name: dropped_rows
+        description: "Number of rows dropped during cleaning (raw - clean)"
+      - name: null_pct_region
+        description: "Percentage of null values in the region column"
+      - name: null_pct_2022
+        description: "Percentage of null values in motor_vehi_reg_2022"
+      - name: null_pct_2023
+        description: "Percentage of null values in motor_vehi_reg_2023"
+      - name: null_pct_2024
+        description: "Percentage of null values in motor_vehi_reg_2024"
+      - name: duplicate_regions
+        description: "Count of duplicate region entries in the clean table"
+      - name: negative_registration
+        description: "Count of rows with negative vehicle registration values"
+      - name: outlier_growth_2022_2023
+        description: "Count of rows with extreme percent change from 2022 to 2023"
+      - name: outlier_growth_2023_2024
+        description: "Count of rows with extreme percent change from 2023 to 2024"
+
+  - name: dq_lto_motor_vehicles_anomalies
+    description: "Row-level data quality anomalies for LTO Motor Vehicles table"
+    columns:
+      - name: region
+        description: "Region name in uppercase"
+      - name: motor_vehi_reg_2022
+        description: "Vehicle registration count for 2022"
+      - name: motor_vehi_reg_2023
+        description: "Vehicle registration count for 2023"
+      - name: motor_vehi_reg_2024
+        description: "Vehicle registration count for 2024"
+      - name: percent_inc_dec_2022_2023
+        description: "Percent change in registrations from 2022 to 2023"
+      - name: percent_inc_dec_2023_2024
+        description: "Percent change in registrations from 2023 to 2024"
+      - name: dq_issue
+        description: "Classification of the detected data quality issue for the row (null_region, negative_registration, outlier_growth_2022_2023, outlier_growth_2023_2024)"
+
+  # PSA GRDP Per Capita
+  - name: dq_psa_grdp_per_capita_summary
+    description: "Data quality summary for PSA GRDP per capita table"
+    columns:
+      - name: row_count_raw
+        description: "Total number of rows in the raw GRDP per capita table"
+      - name: row_count_clean
+        description: "Total number of rows in the clean GRDP per capita table"
+      - name: dropped_rows
+        description: "Number of rows dropped during cleaning (raw - clean)"
+      - name: null_pct_region
+        description: "Percentage of null values in the region column"
+      - name: duplicate_regions
+        description: "Count of duplicate region entries in the clean table"
+      - name: negative_grdp
+        description: "Count of rows with negative GRDP per capita"
+      - name: outlier_jump
+        description: "Count of rows with extreme year-to-year GRDP jumps"
+
+  - name: dq_psa_grdp_per_capita_anomalies
+    description: "Row-level data quality anomalies for PSA GRDP per capita table"
+    columns:
+      - name: region
+        description: "Region name in uppercase"
+      - name: year_2012
+        description: "GRDP per capita for 2012"
+      - name: year_2013
+        description: "GRDP per capita for 2013"
+      - name: year_2014
+        description: "GRDP per capita for 2014"
+      - name: year_2015
+        description: "GRDP per capita for 2015"
+      - name: year_2016
+        description: "GRDP per capita for 2016"
+      - name: year_2017
+        description: "GRDP per capita for 2017"
+      - name: year_2018
+        description: "GRDP per capita for 2018"
+      - name: year_2019
+        description: "GRDP per capita for 2019"
+      - name: year_2020
+        description: "GRDP per capita for 2020"
+      - name: year_2021
+        description: "GRDP per capita for 2021"
+      - name: year_2022
+        description: "GRDP per capita for 2022"
+      - name: year_2023
+        description: "GRDP per capita for 2023"
+      - name: year_2024
+        description: "GRDP per capita for 2024"
+      - name: dq_issue
+        description: "Classification of the detected data quality issue for the row (null_region, negative_grdp, outlier_jump)"
+
+  # PSA Labor Force Participation
+  - name: dq_psa_labor_force_participation_summary
+    description: "Data quality summary for PSA Labor Force Participation table"
+    columns:
+      - name: row_count_raw
+        description: "Total number of rows in the raw labor force table"
+      - name: row_count_clean
+        description: "Total number of rows in the clean labor force table"
+      - name: dropped_rows
+        description: "Number of rows dropped during cleaning (raw - clean)"
+      - name: null_pct_region
+        description: "Percentage of null values in the region column"
+      - name: duplicate_regions
+        description: "Count of duplicate region entries in the clean table"
+      - name: negative_values
+        description: "Count of rows with negative labor force or employment rate values"
+      - name: outlier_jump
+        description: "Count of rows with extreme year-to-year jumps in labor force or employment rate"
+
+  - name: dq_psa_labor_force_participation_anomalies
+    description: "Row-level data quality anomalies for PSA Labor Force Participation table"
+    columns:
+      - name: region
+        description: "Region name in uppercase"
+      - name: labor_force_parti_rate_2024
+        description: "Labor force participation rate 2024"
+      - name: labor_force_parti_rate_jan_2025
+        description: "Labor force participation rate January 2025"
+      - name: labor_force_parti_rate_april_2025
+        description: "Labor force participation rate April 2025"
+      - name: labor_force_parti_rate_july_2025
+        description: "Labor force participation rate July 2025"
+      - name: employment_rate_jul_2024
+        description: "Employment rate July 2024"
+      - name: employment_rate_jan_2025
+        description: "Employment rate January 2025"
+      - name: employment_rate_april_2025
+        description: "Employment rate April 2025"
+      - name: employment_rate_jul_2025
+        description: "Employment rate July 2025"
+      - name: dq_issue
+        description: "Classification of the detected data quality issue for the row (null_region, negative_values, outlier_jump)"
+
+  # PSA Population Density
+  - name: dq_psa_population_density_summary
+    description: "Data quality summary for PSA Population Density table"
+    columns:
+      - name: row_count_raw
+        description: "Total number of rows in the raw population density table"
+      - name: row_count_clean
+        description: "Total number of rows in the clean population density table"
+      - name: dropped_rows
+        description: "Number of rows dropped during cleaning (raw - clean)"
+      - name: null_pct_region
+        description: "Percentage of null values in the region column"
+      - name: duplicate_regions
+        description: "Count of duplicate region entries in the clean table"
+      - name: negative_values
+        description: "Count of rows with negative population density values"
+      - name: outlier_jump
+        description: "Count of rows with extreme year-to-year population density jumps"
+
+  - name: dq_psa_population_density_anomalies
+    description: "Row-level data quality anomalies for PSA Population Density table"
+    columns:
+      - name: region
+        description: "Region name in uppercase"
+      - name: population_2010
+      - name: population_2015
+      - name: population_2020
+      - name: population_2024
+      - name: land_area
+      - name: population_density_2010
+      - name: population_density_2015
+      - name: population_density_2020
+      - name: population_density_2024
+      - name: dq_issue
+        description: "Classification of the detected data quality issue for the row (null_region, negative_values, outlier_jump)"
+
+  # PSA Population Growth Rate
+  - name: dq_psa_population_growth_rate_summary
+    description: "Data quality summary for PSA Population Growth Rate table"
+    columns:
+      - name: row_count_raw
+        description: "Total number of rows in the raw population growth rate table"
+      - name: row_count_clean
+        description: "Total number of rows in the clean population growth rate table"
+      - name: dropped_rows
+        description: "Number of rows dropped during cleaning (raw - clean)"
+      - name: null_pct_region
+        description: "Percentage of null values in the region column"
+      - name: duplicate_regions
+        description: "Count of duplicate region entries in the clean table"
+      - name: negative_values
+        description: "Count of rows with negative population growth rate values"
+      - name: outlier_jump
+        description: "Count of rows with extreme year-to-year population growth rate jumps"
+
+  - name: dq_psa_population_growth_rate_anomalies
+    description: "Row-level data quality anomalies for PSA Population Growth Rate table"
+    columns:
+      - name: region
+        description: "Region name in uppercase"
+      - name: population_2010
+      - name: population_2015
+      - name: population_2020
+      - name: population_2024
+      - name: land_area
+      - name: population_density_2010
+      - name: population_density_2015
+      - name: population_density_2020
+      - name: population_density_2024
+      - name: density_growth_rate_2010_2024
+      - name: urban_pop_growth_2010_2020
+      - name: urban_pop_growth_2010_2024
+      - name: dq_issue
+        description: "Classification of the detected data quality issue for the row (null_region, negative_values, outlier_jump)"
