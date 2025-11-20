@@ -12,3 +12,192 @@ models:
         description: "Type/category of the vehicle."
       - name: count
         description: "Number of vehicles."
+
+  - name: fact_population
+    description: "Fact table aggregating population indicators, density, growth, normalized scores, weighted population indicator score, and ranking by region."
+    schema: mart_grp3
+    tags: ["mart", "population"]
+    columns:
+      - name: region_id
+        description: "Reference to dim_region.region_id"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_region')
+              field: region_id
+      - name: population_2024
+        description: "Population of the region for the year 2024"
+      - name: avg_population_growth_rate_2010_2024
+        description: "Average population growth rate for the region from 2010 to 2024"
+      - name: land_area
+        description: "Land area of the region in square kilometers"
+      - name: avg_population_density_2010_2024
+        description: "Average population density from 2010 to 2024"
+      - name: density_growth_rate_2010_2024
+        description: "Population density growth from 2010 to 2024"
+      - name: population_score
+        description: "Normalized score for population_2024 (0–1)"
+      - name: growth_rate_score
+        description: "Normalized score for avg_population_growth_rate_2010_2024 (0–1)"
+      - name: land_area_score
+        description: "Normalized score for land_area (0–1)"
+      - name: density_score
+        description: "Normalized score for avg_population_density_2010_2024 (0–1)"
+      - name: density_growth_score
+        description: "Normalized score for density_growth_rate_2010_2024 (0–1)"
+      - name: population_indicator_score
+        description: "Weighted population indicator score (1 decimal, 0–100) calculated from normalized scores"
+      - name: population_indicator_rank
+        description: "Ranking of the region based on population_indicator_score, excluding Nationwide (region_id = 0)"
+
+  - name: fact_development
+    description: |
+      Fact table for regional development indicators including RGDP per capita,
+      RGDP growth, urban population growth, economic dynamism, and labor force participation.
+      Computes normalized scores and weighted development indicator score and rank.
+    columns:
+      - name: region_id
+        description: "Unique identifier for each region"
+        tests:
+          - not_null
+      - name: avg_rgdp_pc_2022_2024
+        description: "Average RGDP per capita across years 2022, 2023, and 2024"
+        tests:
+          - not_null
+      - name: avg_rgdp_pc_gr_2022_2024
+        description: "Average RGDP per capita growth rate across 2022-2023 and 2023-2024"
+        tests:
+          - not_null
+      - name: urban_pop_growth_2010_2020
+        description: "Urban population growth rate from 2010 to 2020"
+        tests:
+          - not_null
+      - name: economic_dynamism_2016_2024
+        description: "Average economic dynamism score across years 2016 to 2024"
+        tests:
+          - not_null
+      - name: avg_labor_force_participation_2024_2025
+        description: "Average labor force participation rate from 2024 to 2025"
+        tests:
+          - not_null
+      - name: employment_rate_2025
+        description: "Employment rate in July 2025"
+        tests:
+          - not_null
+      - name: rgdp_score
+        description: "Normalized RGDP score (0-1)"
+        tests:
+          - not_null
+      - name: rgdp_growth_score
+        description: "Normalized RGDP growth score (0-1)"
+        tests:
+          - not_null
+      - name: urban_pop_growth_score
+        description: "Normalized urban population growth score (0-1)"
+        tests:
+          - not_null
+      - name: economic_dynamism_score
+        description: "Normalized economic dynamism score (0-1)"
+        tests:
+          - not_null
+      - name: employment_score
+        description: "Normalized employment score (0-1)"
+        tests:
+          - not_null
+      - name: development_indicator_score
+        description: "Weighted composite score for development indicators (0-100)"
+        tests:
+          - not_null
+      - name: development_indicator_rank
+        description: "Rank of regions based on development indicator score"
+        tests:
+          - not_null
+
+  - name: dim_region
+    description: "Dimension table containing PSA region codes including Nationwide aggregate."
+    schema: mart_grp3
+    tags: ["mart", "dimension"]
+    columns:
+      - name: region_id
+        description: "Unique surrogate key for the region"
+        tests:
+          - not_null
+          - unique
+      - name: region_name
+        description: "Name of the region"
+        tests:
+          - not_null
+          - unique
+      - name: created_at
+        description: "Timestamp when the row was created"
+
+
+  - name: fact_major_indicator
+    description: "Aggregated major indicator scores per region with weighted final score and rank."
+    columns:
+      - name: region_id
+        description: "Reference ID from dim_region."
+        tests:
+          - not_null
+          - unique
+      - name: population_score
+        description: "Population indicator score from fact_population."
+        tests:
+          - not_null
+      - name: development_score
+        description: "Development indicator score from fact_development."
+        tests:
+          - not_null
+      - name: disaster_risk_score
+        description: "Total disaster risk score from fact_disaster_risk."
+        tests:
+          - not_null
+      - name: transport_score
+        description: "Transport indicator score from fact_transport."
+        tests:
+          - not_null
+      - name: social_services_score
+        description: "Social services indicator score from fact_social_services."
+        tests:
+          - not_null
+      - name: final_score
+        description: "Weighted sum of all indicator scores."
+        tests:
+          - not_null
+      - name: indicator_rank
+        description: "Rank of the region based on final_score (dense rank)."
+        tests:
+          - not_null
+
+  - name: fact_social_services
+    description: "Aggregated social service indicator per region based on population, hospital density, water access, and school scores."
+    columns:
+      - name: region_id
+        description: "Unique identifier for the region."
+        tests:
+          - not_null
+          - unique
+      - name: population_score
+        description: "Normalized population score for the region."
+        tests:
+          - not_null
+      - name: hospital_density_score
+        description: "Normalized hospital density score for the region."
+        tests:
+          - not_null
+      - name: water_access_score
+        description: "Normalized water access score for the region."
+        tests:
+          - not_null
+      - name: school_score
+        description: "Normalized school availability score for the region."
+        tests:
+          - not_null
+      - name: social_service_score
+        description: "Weighted aggregated score for social services (population, hospitals, water, schools) multiplied by 100."
+        tests:
+          - not_null
+      - name: social_service_rank
+        description: "Dense rank of regions based on social_service_score in descending order."
+        tests:
+          - not_null
