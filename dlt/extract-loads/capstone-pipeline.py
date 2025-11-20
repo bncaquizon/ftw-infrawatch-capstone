@@ -3,7 +3,7 @@ import dlt
 import pandas as pd
 import os
 
-<<<<<<< HEAD
+HEAD
 # https://archive.ics.uci.edu/dataset/9/auto+mpg
 # @dlt.resource(name="capstone")
 # def mpg():
@@ -167,7 +167,7 @@ def run():
     print("Fetching and loading...")
     # info1 = p.run(grdp())          # dlt pulls creds from env-vars
     # print("records loaded:", info1)
-=======
+
 # -------------------------------
 # Unemployment data resource
 # -------------------------------
