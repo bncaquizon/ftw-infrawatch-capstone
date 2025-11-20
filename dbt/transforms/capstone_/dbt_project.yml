@@ -8,6 +8,9 @@ macro-paths: ["macros"]
 
 models:
   capstone_infra:
+    clean:
+      +schema: clean_grp3
+      +materialized: table
     mart:
       +schema: mart_grp3
       +materialized: view
