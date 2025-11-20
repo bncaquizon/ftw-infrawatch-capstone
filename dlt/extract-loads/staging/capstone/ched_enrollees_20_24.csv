@@ -1,0 +1,223 @@
+region,HEI Type,Program Level,2020-20201,2021-2022,2022-2023,2023-2024
+01 - Ilocos Region,LUC,Baccalaureate,"17,717","25,609","28,326","31,319"
+01 - Ilocos Region,LUC,Doctorate,33,22,19,17
+01 - Ilocos Region,LUC,Masters,245,243,216,197
+01 - Ilocos Region,LUC,Post Baccalaureate,,,57,
+01 - Ilocos Region,LUC,Pre Baccalaureate,"1,382",-,926,960
+01 - Ilocos Region,Private,Baccalaureate,"71,782","92,653","116,864","129,331"
+01 - Ilocos Region,Private,Doctorate,"2,011","1,910","1,974","1,898"
+01 - Ilocos Region,Private,Masters,"8,904","8,550","8,182","8,856"
+01 - Ilocos Region,Private,Post Baccalaureate,255,,,
+01 - Ilocos Region,Private,Pre Baccalaureate,197,743,509,680
+01 - Ilocos Region,SUC,Baccalaureate,"70,180","85,200","93,630","94,583"
+01 - Ilocos Region,SUC,Doctorate,756,556,706,959
+01 - Ilocos Region,SUC,Masters,"3,513","3,940","3,505","3,848"
+01 - Ilocos Region,SUC,Post Baccalaureate,176,181,494,129
+01 - Ilocos Region,SUC,Pre Baccalaureate,"1,814","1,530","3,137","4,244"
+02 - Cagayan Valley,Private,Baccalaureate,"54,346","67,942","79,396","79,694"
+02 - Cagayan Valley,Private,Doctorate,"1,585","1,704","1,429","1,776"
+02 - Cagayan Valley,Private,Masters,"7,615","7,912","4,890","9,014"
+02 - Cagayan Valley,Private,Post Baccalaureate,13,6,,
+02 - Cagayan Valley,Private,Pre Baccalaureate,261,340,461,244
+02 - Cagayan Valley,SUC,Baccalaureate,"67,675","87,761","92,488","104,419"
+02 - Cagayan Valley,SUC,Doctorate,701,631,596,772
+02 - Cagayan Valley,SUC,Masters,"3,209","2,791","2,572","3,162"
+02 - Cagayan Valley,SUC,Post Baccalaureate,902,382,433,12
+02 - Cagayan Valley,SUC,Pre Baccalaureate,"2,903","1,380","1,989","1,549"
+03 - Central Luzon,LUC,Baccalaureate,"26,790","35,519","48,140","63,222"
+03 - Central Luzon,LUC,Masters,100,63,,118
+03 - Central Luzon,LUC,Pre Baccalaureate,570,532,665,733
+03 - Central Luzon,Private,Baccalaureate,"130,111","180,387","208,333","226,394"
+03 - Central Luzon,Private,Doctorate,960,"1,483","1,752","1,462"
+03 - Central Luzon,Private,Masters,"9,675","10,526","10,849","9,914"
+03 - Central Luzon,Private,Post Baccalaureate,217,140,53,154
+03 - Central Luzon,Private,Pre Baccalaureate,"1,765","1,745","1,847","2,564"
+03 - Central Luzon,SUC,Baccalaureate,"146,222","194,510","202,131","207,428"
+03 - Central Luzon,SUC,Doctorate,963,"1,365","1,323","1,144"
+03 - Central Luzon,SUC,Masters,"6,559","9,365","8,021","8,905"
+03 - Central Luzon,SUC,Post Baccalaureate,71,226,108,247
+03 - Central Luzon,SUC,Pre Baccalaureate,"10,586","3,847","4,457","4,268"
+04 - CALABARZON,LUC,Baccalaureate,"41,444","55,920","64,057","73,254"
+04 - CALABARZON,LUC,Masters,48,143,220,381
+04 - CALABARZON,LUC,Post Baccalaureate,,35,160,30
+04 - CALABARZON,LUC,Pre Baccalaureate,550,574,974,736
+04 - CALABARZON,OGS,Baccalaureate,"1,075",991,"1,090","1,075"
+04 - CALABARZON,Private,Baccalaureate,"198,842","223,087","263,615","343,591"
+04 - CALABARZON,Private,Doctorate,"1,547","2,006","2,355","2,104"
+04 - CALABARZON,Private,Masters,"8,698","10,546","10,703","9,493"
+04 - CALABARZON,Private,Post Baccalaureate,141,142,128,136
+04 - CALABARZON,Private,Pre Baccalaureate,"1,412",605,"1,205","2,382"
+04 - CALABARZON,SUC,Baccalaureate,"164,373","212,141","216,793","225,966"
+04 - CALABARZON,SUC,Doctorate,"1,813","2,681","2,420","2,311"
+04 - CALABARZON,SUC,Masters,"10,210","14,399","12,459","11,405"
+04 - CALABARZON,SUC,Post Baccalaureate,851,"1,041","1,085",966
+04 - CALABARZON,SUC,Pre Baccalaureate,"4,629","5,127","4,198","3,526"
+05 - Bicol Region,LUC,Baccalaureate,"34,519","34,124","52,510","56,498"
+05 - Bicol Region,LUC,Pre Baccalaureate,360,427,549,440
+05 - Bicol Region,Private,Baccalaureate,"78,654","96,635","117,580","128,080"
+05 - Bicol Region,Private,Doctorate,613,496,740,793
+05 - Bicol Region,Private,Masters,"5,433","7,011","11,415","12,218"
+05 - Bicol Region,Private,Post Baccalaureate,24,33,66,62
+05 - Bicol Region,Private,Pre Baccalaureate,"1,240","1,503","2,166","1,242"
+05 - Bicol Region,SUC,Baccalaureate,"80,516","95,832","104,702","112,717"
+05 - Bicol Region,SUC,Doctorate,649,611,623,626
+05 - Bicol Region,SUC,Masters,"3,787","4,686","4,563","4,677"
+05 - Bicol Region,SUC,Post Baccalaureate,95,154,162,312
+05 - Bicol Region,SUC,Pre Baccalaureate,"3,831","2,384","3,770","1,947"
+06 - Western Visayas,LUC,Baccalaureate,"16,082","22,458","23,360","29,857"
+06 - Western Visayas,LUC,Doctorate,80,75,69,44
+06 - Western Visayas,LUC,Masters,631,"1,120","1,081",484
+06 - Western Visayas,LUC,Post Baccalaureate,13,10,9,
+06 - Western Visayas,LUC,Pre Baccalaureate,320,210,,541
+06 - Western Visayas,OGS,Pre Baccalaureate,41,,,
+06 - Western Visayas,Private,Baccalaureate,"93,784","117,606","132,161","171,579"
+06 - Western Visayas,Private,Doctorate,856,"1,024","1,220","1,277"
+06 - Western Visayas,Private,Masters,"3,883","5,587","5,631","6,154"
+06 - Western Visayas,Private,Post Baccalaureate,246,118,45,71
+06 - Western Visayas,Private,Pre Baccalaureate,"2,961","4,208","4,204",555
+06 - Western Visayas,SUC,Baccalaureate,"114,339","155,193","164,748","167,165"
+06 - Western Visayas,SUC,Doctorate,"1,744","1,677","1,524","1,598"
+06 - Western Visayas,SUC,Masters,"9,749","10,788","9,084","10,105"
+06 - Western Visayas,SUC,Post Baccalaureate,"1,303",412,560,383
+06 - Western Visayas,SUC,Pre Baccalaureate,"1,366",694,202,193
+07 - Central Visayas,LUC,Baccalaureate,"21,841","22,454","33,626","39,200"
+07 - Central Visayas,LUC,Masters,"1,298",,,-
+07 - Central Visayas,LUC,Post Baccalaureate,38,,,
+07 - Central Visayas,LUC,Pre Baccalaureate,20,,,
+07 - Central Visayas,Private,Baccalaureate,"150,003","124,248","192,902","220,944"
+07 - Central Visayas,Private,Doctorate,"1,427","1,361","1,828","1,167"
+07 - Central Visayas,Private,Masters,"6,378","4,977","5,262","5,754"
+07 - Central Visayas,Private,Post Baccalaureate,149,207,192,112
+07 - Central Visayas,Private,Pre Baccalaureate,"3,484","3,147","3,554","3,651"
+07 - Central Visayas,SUC,Baccalaureate,"92,325","104,342","118,440","125,611"
+07 - Central Visayas,SUC,Doctorate,"1,137",513,"1,028","1,065"
+07 - Central Visayas,SUC,Masters,"5,476","4,071","8,276","6,757"
+07 - Central Visayas,SUC,Post Baccalaureate,387,549,657,"1,122"
+07 - Central Visayas,SUC,Pre Baccalaureate,"2,109","1,672",855,"1,639"
+08 - Eastern Visayas,LUC,Baccalaureate,"4,386","6,383","10,571","11,111"
+08 - Eastern Visayas,LUC,Post Baccalaureate,8,8,,
+08 - Eastern Visayas,LUC,Pre Baccalaureate,-,-,-,-
+08 - Eastern Visayas,Private,Baccalaureate,"36,012","45,930","56,282","61,232"
+08 - Eastern Visayas,Private,Doctorate,63,75,4,43
+08 - Eastern Visayas,Private,Masters,"2,996","4,060","1,944","3,731"
+08 - Eastern Visayas,Private,Post Baccalaureate,116,44,256,463
+08 - Eastern Visayas,Private,Pre Baccalaureate,223,291,265,125
+08 - Eastern Visayas,SUC,Baccalaureate,"111,249","130,784","132,110","133,725"
+08 - Eastern Visayas,SUC,Doctorate,662,704,737,722
+08 - Eastern Visayas,SUC,Masters,"4,204","4,744","4,510","6,533"
+08 - Eastern Visayas,SUC,Post Baccalaureate,599,751,670,457
+08 - Eastern Visayas,SUC,Pre Baccalaureate,202,245,250,348
+09 - Zamboanga Peninsula,LUC,Baccalaureate,"2,262","1,915","3,451","3,578"
+09 - Zamboanga Peninsula,LUC,Pre Baccalaureate,,,364,517
+09 - Zamboanga Peninsula,Private,Baccalaureate,"46,852","54,370","64,521","69,411"
+09 - Zamboanga Peninsula,Private,Doctorate,631,635,174,126
+09 - Zamboanga Peninsula,Private,Masters,"3,944","6,018","5,941","5,862"
+09 - Zamboanga Peninsula,Private,Post Baccalaureate,217,218,245,148
+09 - Zamboanga Peninsula,Private,Pre Baccalaureate,427,216,454,898
+09 - Zamboanga Peninsula,SUC,Baccalaureate,"69,901","55,197","78,093","77,738"
+09 - Zamboanga Peninsula,SUC,Doctorate,253,104,208,211
+09 - Zamboanga Peninsula,SUC,Masters,"2,619","2,252","2,721","3,007"
+09 - Zamboanga Peninsula,SUC,Post Baccalaureate,823,847,895,767
+09 - Zamboanga Peninsula,SUC,Pre Baccalaureate,"5,286","5,752","5,798","6,035"
+10 - Northern Mindanao,LUC,Baccalaureate,"21,643","32,909","37,186","41,870"
+10 - Northern Mindanao,LUC,Post Baccalaureate,72,100,79,108
+10 - Northern Mindanao,LUC,Pre Baccalaureate,473,580,682,342
+10 - Northern Mindanao,Private,Baccalaureate,"79,040","95,292","108,143","117,419"
+10 - Northern Mindanao,Private,Doctorate,999,938,868,773
+10 - Northern Mindanao,Private,Masters,"7,352","7,953","9,191","7,474"
+10 - Northern Mindanao,Private,Post Baccalaureate,58,26,101,195
+10 - Northern Mindanao,Private,Pre Baccalaureate,519,648,795,451
+10 - Northern Mindanao,SUC,Baccalaureate,"59,046","76,174","77,230","80,540"
+10 - Northern Mindanao,SUC,Doctorate,766,773,783,958
+10 - Northern Mindanao,SUC,Masters,"3,437","3,710","3,146","3,776"
+10 - Northern Mindanao,SUC,Post Baccalaureate,98,182,86,27
+10 - Northern Mindanao,SUC,Pre Baccalaureate,"2,474","2,537","2,485","1,283"
+11 - Davao Region,LUC,Baccalaureate,"11,666","17,861","21,354","25,832"
+11 - Davao Region,Private,Baccalaureate,"106,835","131,090","157,803","166,347"
+11 - Davao Region,Private,Doctorate,976,"1,039","1,151","1,220"
+11 - Davao Region,Private,Masters,"7,148","9,886","9,603","10,067"
+11 - Davao Region,Private,Post Baccalaureate,600,42,19,
+11 - Davao Region,Private,Pre Baccalaureate,336,923,404,727
+11 - Davao Region,SUC,Baccalaureate,"31,732","42,550","46,710","49,586"
+11 - Davao Region,SUC,Doctorate,391,476,484,440
+11 - Davao Region,SUC,Masters,"3,382","3,819","3,731","3,241"
+11 - Davao Region,SUC,Post Baccalaureate,141,99,87,132
+11 - Davao Region,SUC,Pre Baccalaureate,176,313,367,867
+12 - Soccsksargen,LUC,Baccalaureate,"3,772","2,365","3,830","6,738"
+12 - Soccsksargen,LUC,Pre Baccalaureate,351,,14,298
+12 - Soccsksargen,Private,Baccalaureate,"94,318","108,334","128,799","164,466"
+12 - Soccsksargen,Private,Doctorate,135,101,90,76
+12 - Soccsksargen,Private,Masters,"2,418","1,843","2,772","3,698"
+12 - Soccsksargen,Private,Post Baccalaureate,,13,12,11
+12 - Soccsksargen,Private,Pre Baccalaureate,"1,775","2,109","2,176","2,266"
+12 - Soccsksargen,SUC,Baccalaureate,"33,691","41,005","34,391","45,739"
+12 - Soccsksargen,SUC,Doctorate,575,744,626,"1,043"
+12 - Soccsksargen,SUC,Masters,"3,015","4,819","3,536","2,924"
+12 - Soccsksargen,SUC,Post Baccalaureate,137,178,210,417
+12 - Soccsksargen,SUC,Pre Baccalaureate,97,"1,137",163,763
+13 - Nat. Capital Region,LUC,Baccalaureate,"92,735","84,494","124,454","102,938"
+13 - Nat. Capital Region,LUC,Doctorate,270,244,274,269
+13 - Nat. Capital Region,LUC,Masters,"2,878","2,006","3,173","2,014"
+13 - Nat. Capital Region,LUC,Post Baccalaureate,282,1,34,21
+13 - Nat. Capital Region,LUC,Pre Baccalaureate,"4,612","2,889","2,625","2,161"
+13 - Nat. Capital Region,OGS,Baccalaureate,31,34,41,118
+13 - Nat. Capital Region,OGS,Doctorate,6,6,6,6
+13 - Nat. Capital Region,OGS,Masters,657,657,721,724
+13 - Nat. Capital Region,OGS,Pre Baccalaureate,96,123,244,84
+13 - Nat. Capital Region,Private,Baccalaureate,"387,304","424,553","488,409","474,275"
+13 - Nat. Capital Region,Private,Doctorate,"5,545","8,329","10,541","9,818"
+13 - Nat. Capital Region,Private,Masters,"23,604","29,082","42,903","21,460"
+13 - Nat. Capital Region,Private,Post Baccalaureate,347,726,826,839
+13 - Nat. Capital Region,Private,Pre Baccalaureate,945,"1,197","1,461",685
+13 - Nat. Capital Region,SUC,Baccalaureate,"124,974","123,278","149,221","157,785"
+13 - Nat. Capital Region,SUC,Doctorate,"2,263","2,416","3,286","3,642"
+13 - Nat. Capital Region,SUC,Masters,"14,825","9,787","13,422","12,760"
+13 - Nat. Capital Region,SUC,Post Baccalaureate,"1,953",669,822,925
+13 - Nat. Capital Region,SUC,Pre Baccalaureate,"6,177","4,365","5,133","4,724"
+14 - Cordillera Adm. Region,OGS,Baccalaureate,818,,,
+14 - Cordillera Adm. Region,Private,Baccalaureate,"51,970","62,157","67,283","83,649"
+14 - Cordillera Adm. Region,Private,Doctorate,685,847,938,888
+14 - Cordillera Adm. Region,Private,Masters,"2,368","2,784","2,591","2,639"
+14 - Cordillera Adm. Region,Private,Post Baccalaureate,,,,20
+14 - Cordillera Adm. Region,Private,Pre Baccalaureate,471,646,530,751
+14 - Cordillera Adm. Region,SUC,Baccalaureate,"33,342","40,912","47,054","56,200"
+14 - Cordillera Adm. Region,SUC,Doctorate,324,655,525,676
+14 - Cordillera Adm. Region,SUC,Masters,"2,748","3,517","3,203","4,153"
+14 - Cordillera Adm. Region,SUC,Post Baccalaureate,119,216,205,95
+14 - Cordillera Adm. Region,SUC,Pre Baccalaureate,"1,014",903,893,772
+15 - Bangsamoro Autonomous Region in Muslim Mindanao,OGS,Baccalaureate,"2,544",,,
+15 - Bangsamoro Autonomous Region in Muslim Mindanao,OGS,Masters,-,,,
+15 - Bangsamoro Autonomous Region in Muslim Mindanao,OGS,Pre Baccalaureate,72,,,
+15 - Bangsamoro Autonomous Region in Muslim Mindanao,Private,Baccalaureate,"34,727",,,
+15 - Bangsamoro Autonomous Region in Muslim Mindanao,Private,Doctorate,171,,,
+15 - Bangsamoro Autonomous Region in Muslim Mindanao,Private,Masters,"4,416",,,
+15 - Bangsamoro Autonomous Region in Muslim Mindanao,Private,Post Baccalaureate,225,,,
+15 - Bangsamoro Autonomous Region in Muslim Mindanao,Private,Pre Baccalaureate,"1,326",,,
+15 - Bangsamoro Autonomous Region in Muslim Mindanao,SUC,Baccalaureate,"32,366","8,066","8,620",
+15 - Bangsamoro Autonomous Region in Muslim Mindanao,SUC,Doctorate,356,266,167,
+15 - Bangsamoro Autonomous Region in Muslim Mindanao,SUC,Masters,"3,500","1,063",944,
+15 - Bangsamoro Autonomous Region in Muslim Mindanao,SUC,Post Baccalaureate,115,,,
+15 - Bangsamoro Autonomous Region in Muslim Mindanao,SUC,Pre Baccalaureate,"1,916",-,50,
+16 - Caraga,LUC,Baccalaureate,932,932,"1,037",982
+16 - Caraga,Private,Baccalaureate,"36,833","48,702","60,449","57,195"
+16 - Caraga,Private,Doctorate,114,91,122,168
+16 - Caraga,Private,Masters,"1,293","1,663","1,651","2,144"
+16 - Caraga,Private,Post Baccalaureate,18,40,204,29
+16 - Caraga,Private,Pre Baccalaureate,107,586,985,889
+16 - Caraga,SUC,Baccalaureate,"42,596","52,033","54,951","58,639"
+16 - Caraga,SUC,Doctorate,157,191,157,209
+16 - Caraga,SUC,Masters,"2,116","3,079","2,684","3,210"
+16 - Caraga,SUC,Post Baccalaureate,155,104,141,38
+16 - Caraga,SUC,Pre Baccalaureate,306,403,471,516
+17 - MIMAROPA,LUC,Baccalaureate,"1,524","2,692","4,301","4,643"
+17 - MIMAROPA,Private,Baccalaureate,"23,785","34,542","40,002","44,304"
+17 - MIMAROPA,Private,Doctorate,94,70,64,65
+17 - MIMAROPA,Private,Masters,828,862,762,619
+17 - MIMAROPA,Private,Post Baccalaureate,17,10,248,5
+17 - MIMAROPA,Private,Pre Baccalaureate,50,80,135,132
+17 - MIMAROPA,SUC,Baccalaureate,"73,994","90,612","88,790","91,484"
+17 - MIMAROPA,SUC,Doctorate,159,186,201,175
+17 - MIMAROPA,SUC,Masters,"2,660","2,462","2,524","2,072"
+17 - MIMAROPA,SUC,Post Baccalaureate,30,31,13,25
+17 - MIMAROPA,SUC,Pre Baccalaureate,789,690,794,661
+Grand Total,,,"3,638,821","4,164,809","4,792,160","5,140,409"
