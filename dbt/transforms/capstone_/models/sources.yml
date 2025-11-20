@@ -1,25 +1,7 @@
 version: 2
 
 sources:
-  - name: raw_grp3
-    schema: raw_grp3
-    tables:
-      - name: raw___pdc_disaster_index
-      - name: raw___pdc_multihazard
-      - name: raw___ched_schools
-      - name: raw___cmci_availabilityof_basic_utilities
-      - name: raw___cmci_basic_internet_service
-      - name: raw___cmci_distance_ports
-      - name: raw___cmci_economicdyna
-      - name: raw___cmci_health
-      - name: raw___cmci_internetcapability
-      - name: raw___cmci_pbpo
-      - name: raw___cmci_road
-      - name: raw___cmci_school
-      - name: raw___cmci_trans
-      - name: raw___cmci_util 
-      - name: raw___dof_ari
-  - name: mart_grp3
-    schema: mart_grp3
+  - name: raw
+    schema: raw
     tables:
       - name: dim_region

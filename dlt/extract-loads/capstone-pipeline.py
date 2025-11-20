@@ -1,7 +1,9 @@
-# dlt/pipeline.py
-import dlt, pandas as pd
+# dlt/unemployment_pipeline.py
+import dlt
+import pandas as pd
 import os
 
+HEAD
 # https://archive.ics.uci.edu/dataset/9/auto+mpg
 # @dlt.resource(name="capstone")
 # def mpg():
@@ -166,6 +168,34 @@ def run():
     print("Fetching and loading...")
     # info1 = p.run(grdp())          # dlt pulls creds from env-vars
     # print("records loaded:", info1)
+
+# -------------------------------
+# Unemployment data resource
+# -------------------------------
+@dlt.resource(write_disposition="append", name="unemployment_data")
+def unemployment_data():
+    ROOT_DIR = os.path.dirname(__file__)
+    STAGING_DIR = os.path.join(ROOT_DIR, "staging")
+    FILE_PATH = os.path.join(STAGING_DIR, "raw__psa_unemployment.csv")
+    
+    # Read CSV and cast everything to string for safe loading
+    yield pd.read_csv(FILE_PATH).astype(str)
+
+
+# -------------------------------
+# Run pipeline
+# -------------------------------
+def run():
+    pipeline = dlt.pipeline(
+        pipeline_name="unemployment-pipeline",
+        destination="clickhouse",   # DLT reads creds from env variables
+        dataset_name="raw_grp3",
+    )
+
+    print("Fetching and loading unemployment data...")
+    info = pipeline.run(unemployment_data())
+    print("✅ Records loaded:", info)
+>>>>>>> 90a19a1 (Add fact_transport table for mart)
 
     info2 = p.run(psa_grdp_by_industry())          # dlt pulls creds from env-vars
     print("records loaded:", info2)

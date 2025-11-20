@@ -1,3 +1,4 @@
+host: 54.87.106.52
 adapter: clickhouse_connect
 port:    8123
 user: ftw_grp3            # same creds you already use
