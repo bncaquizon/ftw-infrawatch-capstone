@@ -42,6 +42,20 @@ parsed AS (
 standardized AS (
     SELECT
         CASE
+            ------------------------------------------------------------------
+            -- TREAT TOTAL, NULL, BLANK, NATIONWIDE AS "NATIONWIDE"
+            ------------------------------------------------------------------
+            WHEN region_name IS NULL THEN 'NATIONWIDE'
+            WHEN trim(region_name) = '' THEN 'NATIONWIDE'
+            WHEN ilike(region_name, '%total%') THEN 'NATIONWIDE'
+            WHEN ilike(region_name, '%nationwide%') THEN 'NATIONWIDE'
+            WHEN ilike(region_name, '%overall%') THEN 'NATIONWIDE'
+            WHEN ilike(region_name, '%philippines%') THEN 'NATIONWIDE'
+            WHEN ilike(region_name, '%all%regions%') THEN 'NATIONWIDE'
+
+            ------------------------------------------------------------------
+            -- REGION NAME MATCHES (using ilike)
+            ------------------------------------------------------------------
             WHEN ilike(region_name, '%capital%') THEN 'NCR'
             WHEN ilike(region_name, '%cordillera%') THEN 'CAR'
             WHEN ilike(region_name, '%ilocos%') THEN 'I'
@@ -59,17 +73,33 @@ standardized AS (
             WHEN ilike(region_name, '%davao%') THEN 'XI'
             WHEN ilike(region_name, '%soccsksargen%') THEN 'XII'
             WHEN ilike(region_name, '%caraga%') THEN 'XIII'
-            WHEN ilike(region_name, '%bangsamoro%') OR ilike(region_name, '%barmm%') THEN 'BARMM'
+            WHEN ilike(region_name, '%bangsamoro%')
+              OR ilike(region_name, '%barmm%')
+              OR ilike(region_name, '%baarm%')
+                THEN 'BARMM'
             WHEN ilike(region_name, '%nationwide%') THEN 'NATIONWIDE'
+
+            ------------------------------------------------------------------
+            -- DIRECT FIXES
+            ------------------------------------------------------------------
+            WHEN upper(region_name) = 'IVA' THEN 'IV-A'
+            WHEN upper(region_name) = 'IV-A' THEN 'IV-A'
+
+            WHEN upper(region_name) = 'IVB' THEN 'IV-B'
+            WHEN upper(region_name) = 'IV-B' THEN 'IV-B'
+
+            WHEN upper(region_name) = 'BAARM' THEN 'BARMM'
+            WHEN upper(region_name) = 'BARMM' THEN 'BARMM'
+
             ELSE region_name
         END AS region,
-
         yr_2020_2021,
         yr_2021_2022,
         yr_2022_2023,
         yr_2023_2024
     FROM parsed
 ),
+
 
 -- ------------------------------------------------------------
 -- Final aggregation: per region totals
@@ -85,6 +115,11 @@ totals AS (
     GROUP BY region
 )
 
-SELECT *
+SELECT 
+    region,
+    total_2021_2022,
+    total_2022_2023,
 FROM totals
-ORDER BY region
+ORDER BY 
+    region = 'NATIONWIDE' DESC,   -- ⭐ Always put nationwide first
+    region ASC
