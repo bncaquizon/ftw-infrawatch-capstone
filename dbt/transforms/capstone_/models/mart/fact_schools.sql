@@ -3,56 +3,58 @@
     schema = "mart_grp3"
 ) }}
 
+SELECT
+    r.region_id,
+    r.region_name,
 
--- ============================================================
--- DEPED 21-22
--- ============================================================
-deped_21 AS (
-    SELECT
-        {{ clean }} AS region_clean,
-        enrollees_21_22
-    FROM clean_grp3.clean_deped_enrollees_21_22
-),
+    -- Total enrollment (2021-2022)
+    (COALESCE(d21.total_2021_2022, 0) + COALESCE(c21.total_2021_2022, 0)) AS total_enrollment_2021_2022,
 
--- ============================================================
--- DEPED 22-23
--- ============================================================
-deped_22 AS (
-    SELECT
-        {{ clean }} AS region_clean,
-        enrollees_22_23
-    FROM clean_grp3.clean_deped_enrollees_22_23
-),
+    -- Total enrollment (2022-2023)
+    (COALESCE(d22.total_2022_2023, 0) + COALESCE(c22.total_2022_2023, 0)) AS total_enrollment_2022_2023,
 
--- ============================================================
--- CHED ENROLLEES
--- ============================================================
-ched AS (
-    SELECT
-        {{ clean }} AS region_clean,
-        total_2021_2022 AS ched_21_22,
-        total_2022_2023 AS ched_22_23
-    FROM clean_grp3.clean_ched_enrollees_20_24
-),
+    -- Enrollment growth rate
+    ROUND(
+        (
+            (
+                COALESCE(d22.total_2022_2023, 0) + COALESCE(c22.total_2022_2023, 0)
+            ) -
+            (
+                COALESCE(d21.total_2021_2022, 0) + COALESCE(c21.total_2021_2022, 0)
+            )
+        ) / NULLIF(
+            (COALESCE(d21.total_2021_2022, 0) + COALESCE(c21.total_2021_2022, 0)), 
+            0
+        ) * 100,
+        2
+    ) AS enrollment_growth_rate,
 
--- ============================================================
--- PSA SCHOOL COUNTS
--- ============================================================
-psa AS (
-    SELECT
-        {{ clean }} AS region_clean,
-        total_schools AS psa_schools_22_23
-    FROM clean_grp3.clean_psa_school_counts
-    WHERE school_year = '2022-2023'
-),
+    -- School density per 100k learners
+    ROUND(
+        COALESCE(s.total_schools, 0)
+        / NULLIF(
+            (COALESCE(d22.total_2022_2023, 0) + COALESCE(c22.total_2022_2023, 0)),
+            0
+        ) * 100000,
+        2
+    ) AS school_density_per_100k
 
--- ============================================================
--- CHED SCHOOL COUNTS
--- ============================================================
-ched_sch AS (
-    SELECT
-        {{ clean }} AS region_clean,
-        total_schools AS ched_schools_22_23
-    FROM clean_grp3.clean_ched_schools_22_25
-    WHERE school_year = '2022-2023'
-)
+FROM mart_grp3.dim_region r
+
+LEFT JOIN clean_grp3.clean_deped_enrollees_21_22 d21 
+    ON r.region_name = d21.region
+
+LEFT JOIN clean_grp3.clean_ched_enrollees_20_24 c21 
+    ON r.region_name = c21.region
+
+LEFT JOIN clean_grp3.clean_deped_enrollees_22_23 d22 
+    ON r.region_name = d22.region
+
+LEFT JOIN clean_grp3.clean_ched_enrollees_20_24 c22 
+    ON r.region_name = c22.region
+
+LEFT JOIN clean_grp3.clean_psa_school_counts s 
+    ON r.region_name = s.region 
+    AND s.school_year = '2022-2023'
+
+ORDER BY r.region_id
