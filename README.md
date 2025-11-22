@@ -45,8 +45,8 @@ We built an end-to-end data pipeline using:
                                                    │
                                                    ▼
                           ┌────────────────────────────────────────────────┐
-                          │            Visualize & Analyze                 │
-                          │    Power BI • Superset • Streamlit • Python    │
+                          │                    Visualize                   │
+                          │                    Power BI                    │
                           └────────────────────────────────────────────────┘
 
  
