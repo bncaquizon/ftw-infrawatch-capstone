@@ -26,6 +26,7 @@ WITH base AS (
     FROM {{ source('raw_grp3', 'raw___psa_deped_schools') }}
 ),
 
+-- UNPIVOT PSA WIDE → LONG FORMAT
 unpivot AS (
     SELECT
         school_year,
@@ -49,12 +50,23 @@ unpivot AS (
             tuple('BARMM', barmm)
         ]) AS rec
     FROM base
+),
+
+final AS (
+    SELECT
+        rec.1 AS region,
+        school_year,
+        SUM(rec.2) AS total_schools
+    FROM unpivot
+    WHERE school_year = '2022-2023'     -- 👈 FILTER HERE
+    GROUP BY region, school_year
 )
 
 SELECT
+    region,
     school_year,
-    rec.1 AS region,
-    SUM(rec.2) AS total_schools   -- ⭐ FIXED: aggregate duplicates
-FROM unpivot
-GROUP BY school_year, region
-ORDER BY school_year, region
+    total_schools
+FROM final
+ORDER BY 
+    region = 'NATIONWIDE' DESC,   -- ⭐ Always put nationwide first
+    region ASC
